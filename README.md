@@ -8,9 +8,9 @@
 
 ### Description
 
-- Ce projet affiche la météo dans différent ville du monde à l'aide de l'API Weather. Il récupère les données météorologique depuis l'API et les affiche dans une jolie interface
+- Ce projet affiche la météo dans différente capital du monde à l'aide de l'API Weather. Il récupère les données météorologique depuis l'API et les affiche dans une jolie interface
 
-- [Lien du site]()
+- [Lien du site](https://weather-meteo.netlify.app/)
 
 
 ### Fonctionnalités
