@@ -1,0 +1,289 @@
+body {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+
+    transition: background-color 0.9s ease-out;
+}
+header {
+    display: grid;
+    align-items: end;
+    justify-items: center;
+    background-color: #21315a;
+}
+h1 {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 64px;
+    padding-bottom: 36px;
+}
+h2 {
+    font-weight: 900;
+    font-size: 32px;
+}
+h1,
+h2 {
+    text-align: center;
+    color: #94ce5a;
+}
+header > img,
+h1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+header > img {
+    max-width: 715px;
+}
+main {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+
+    position: relative;
+}
+.slides-container {
+    display: flex;
+
+    transition: 0.3s ease-out;
+}
+section {
+    padding: 20px 80px;
+
+    width: 100%;
+    flex-shrink: 0;
+
+    display: grid;
+    align-items: center;
+}
+.earth-and-moon {
+    background-color: #242830;
+}
+.earth-low-poly {
+    background-color: #f5f7f8;
+}
+.earth-pixel {
+    background-color: #000;
+}
+.container {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 20px;
+    align-items: center;
+}
+article {
+    background-color: #21315a;
+    padding: 12px;
+    display: grid;
+    gap: 10px;
+}
+
+.bi-chevron-left {
+    left: 15px;
+}
+.bi-chevron-right {
+    right: 15px;
+}
+
+.bi-chevron-left,
+.bi-chevron-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: #94ce5a;
+    border: #94ce5a 2px solid;
+    background-color: #21315a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: 34px;
+    cursor: pointer;
+    transition: 0.6s ease-in;
+    z-index: 1;
+
+    animation: buttonsFloating 4s infinite alternate;
+}
+.bi-chevron-right:hover,
+.bi-chevron-left:hover {
+    color: #21315a;
+    border: #21315a 2px solid;
+    background-color: #94ce5a;
+}
+.bullets {
+    position: absolute;
+    top: calc(min(100%, 100vh) - 40px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.bullets > button {
+    border: #94ce5a 2px solid;
+    background-color: #21315a;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: 0.6s ease-in;
+    cursor: pointer;
+}
+.bullets > button.active {
+    transform: scale(1.4);
+    border-color: #21315a;
+    background-color: #94ce5a;
+}
+
+
+
+
+
+
+
+
+
+
+
+aside{
+    background-color: #21315A;
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+}
+.parent{
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    max-width: 960px;
+    margin: auto;
+
+}
+.temps{
+    padding-top: 5%;
+
+}
+.meteo{
+    border: 1px solid #94ce5a;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    align-items: center;
+}
+
+.pays{
+    display: grid;
+    grid-template-rows: repeat(5,40px);
+    
+}
+.pays button{
+text-align: right;
+background-color: #21315A;
+text-transform: none;
+text-decoration: none;
+color: #94ce5a;
+font-family: 'roboto';
+cursor: pointer;
+padding-right: 4%;
+
+}
+.actived {
+border : 1px solid #94ce5a;
+}
+.actived::after{
+    content:'\003E';
+    color: #94ce5a;
+    position: absolute;
+    margin-left: 4px;
+}
+#degre{
+    font-style: normal;
+    font-size: 64px;
+}
+#weath{
+    font-size: 30px;
+    text-align: center;
+    color: #94ce5a;
+}
+
+.image-temp{
+    position: relative;
+}
+.icon-temps{
+    position: absolute;
+    top: -117px;
+}
+
+
+
+                                            /* RESPONSIVE */
+
+
+@media (max-width: 750px) {
+    section {
+        padding: 20px;
+        align-items: start;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    article {
+        order: -1;
+    }
+    h1 {
+        font-size: 36px;
+        padding-bottom: 15px;
+    }
+    .bi-chevron-left,
+    .bi-chevron-right {
+        display: none !important;
+    }
+
+    .wrapper {
+        height: 100vh;
+        overflow: scroll;
+        scroll-snap-type: y mandatory;
+    }
+    header,
+    main,
+    aside{
+        scroll-snap-align: start;
+    }
+
+    /* Reste du code... */
+    .parent{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .meteo{
+        border: none;
+        order: -1;
+    }
+    .pays{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .pays button{
+        text-align: center;
+    }
+}
+
+@media (max-width: 240px) {
+   .pays{
+    grid-template-columns: 1fr;
+   }
+   .bullets{
+    top:1500px;
+}
+}
+@keyframes buttonsFloating {
+    0% {
+        transform: translateY(-50%);
+        scale: 1;
+    }
+    100% {
+        transform: translateY(-52%);
+        scale: 1.1;
+    }
+}
+
